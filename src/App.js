@@ -34,9 +34,14 @@ class App extends React.Component {
               <Books {...props} booksArray={this.state.master} />
             )} />
           </Switch>
-          <Route path="/books/:book" render={(props) => (
-              <Book {...props} booksArray={this.state.master} />
-            )} />
+          <Route path="/books/:book" render={(props) => {
+            const bookDetails = this.state.master[props.match.params.book];
+            // console.log('matt', this.state.master[props.match.params.book]);
+            return (
+              <Book {...props} name={bookDetails.name} pages={bookDetails.numberOfPages} isbn={bookDetails.isbn} />
+            )
+          }
+            } />
         </header>
       </div>
     );
