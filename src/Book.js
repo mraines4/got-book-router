@@ -7,7 +7,8 @@ function Book({match, booksArray}) {
     console.log(booksArray[match.params.book]);
     const bookDetails = booksArray[match.params.book];
     return (
-        <div>            <h1>Name: {bookDetails.name}</h1>
+        <div>           
+            <h1>Name: {bookDetails.name}</h1>
             <h3>Number of pages: {bookDetails.numberOfPages}</h3>
             <h3>ISBN: {bookDetails.isbn}</h3>
             <ul>
